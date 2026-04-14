@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khusus Untuk Yanti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff5f5; /* Pink sangat muda */
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+        }
+        .handwritten {
+            font-family: 'Caveat', cursive;
+        }
+        .heart-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        .love-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float { animation: floating 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="flex flex-col items-center p-6">
+
+    <div class="heart-bg flex flex-wrap justify-around">
+        <span class="text-4xl">❤️</span><span class="text-2xl">💖</span><span class="text-4xl">❤️</span>
+    </div>
+
+    <div class="mt-10 text-center">
+        <h1 class="text-5xl md:text-6xl handwritten text-red-500">Hai, Yanti..</h1>
+        <p class="text-gray-500 text-sm mt-2 tracking-widest uppercase">Halaman ini cuma buat kamu.</p>
+    </div>
+
+    <div class="mt-10 relative">
+        <div class="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-8 border-white shadow-xl float">
+            <img src="yanti2.jpeg" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-4 -right-4 bg-red-500 text-white p-4 rounded-full shadow-lg">
+            <span class="text-2xl">💝</span>
+        </div>
+    </div>
+
+    <div class="love-card mt-12 p-8 max-w-lg w-full text-center">
+        <p class="text-xl italic text-gray-700 leading-relaxed">
+            "Aku emang nggak pinter ngerangkai kata, tapi lewat kodingan ini aku mau bilang makasih udah jadi bagian paling indah di hidup aku."
+        </p>
+        <div class="mt-6 h-1 w-20 bg-red-200 mx-auto"></div>
+    </div>
+
+    <div class="mt-10 w-full max-w-md">
+        <button onclick="surprise()" class="w-full bg-red-500 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-red-600 transition duration-300">
+            Klik, Ada Pesan Buat Kamu!
+        </button>
+        <div id="pesan-rahasia" class="hidden mt-6 p-6 bg-white rounded-xl border-2 border-dashed border-red-300 text-center handwritten text-2xl text-red-600">
+            Satu kata buat kamu: SEGALANYA. ❤️
+        </div>
+    </div>
+
+    <div class="mt-20 text-center opacity-60">
+        <p class="text-[10px] tracking-widest uppercase mb-4">Now Playing: Favorit Kita</p>
+        <div class="flex items-center justify-center space-x-4">
+            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">🎵</div>
+            <marquee class="w-40 text-sm font-bold text-red-400">Kamu adalah yang terindah... Kamu adalah yang terbaik...</marquee>
+        </div>
+    </div>
+
+    <footer class="mt-20 mb-10 text-gray-400 text-[10px] uppercase tracking-tighter">
+        Dibuat dengan sayang oleh Cowok kamu yang paling ganteng.
+    </footer>
+
+    <script>
+        function surprise() {
+            const pesan = document.getElementById('pesan-rahasia');
+            pesan.classList.toggle('hidden');
+            if(!pesan.classList.contains('hidden')) {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
